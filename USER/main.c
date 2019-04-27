@@ -43,31 +43,26 @@ int main(void)
 
 	  ADS1256_Init();
 
-//			while(1)
-//	{	
-//i=0;
-//Adc = ADS1256ReadData( (i << 3) | ADS1256_MUXN_AINCOM);
-//Volts = Adc*0.000000598;
-//printf(" %x\n  ",Adc);
-//printf(" %.4fV  ",Volts);
+			while(1)
+	{	
 
-//		
-////		for(i = 0;i < 8;i++)
-////		{
 
-////			Adc = ADS1256ReadData( (i << 4) | ADS1256_MUXN_AINCOM);// 相当于 ( ADS1256_MUXP_AIN0 | ADS1256_MUXN_AINCOM);		
+		for(i = 0;i < 8;i++)
+		{
 
-////			 /*差分采集方式*/
-////	    //Adc = ADS1256ReadData( ADS1256_MUXP_AIN0|ADS1256_MUXN_AIN1); //P = AIN0 ,N = AIN1 差分方式*/
-////			Volts = Adc*0.000000598;
-////			
-////			
-////			printf(" %.4fV  ",Volts);
+			Adc = ADS1256ReadData( (i << 4) | ADS1256_MUXN_AINCOM);// 相当于 ( ADS1256_MUXP_AIN0 | ADS1256_MUXN_AINCOM);		
 
-////		}
-////		printf("\r\n"); 
-//	  delay_ms(1000);
-//	}
+			 /*差分采集方式*/
+	    //Adc = ADS1256ReadData( ADS1256_MUXP_AIN0|ADS1256_MUXN_AIN1); //P = AIN0 ,N = AIN1 差分方式*/
+			Volts = Adc*0.000000598;
+			
+			
+			printf(" %.4fV  ",Volts);
+
+		}
+		printf("\r\n"); 
+	  delay_ms(1000);
+	}
 
 
 
